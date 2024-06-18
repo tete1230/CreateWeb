@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/Users/keming/Documents/AliServer/CreateWeb/env/bin/python3
-=======
 #!/Users/linkeming/Documents/AliServerLocal/MyProject/env/bin/python3
->>>>>>> 7b443d62d88e4a6563cfcf1a2885c8df75930daf
 # -*- coding: utf-8 -*-
 import re
 import sys

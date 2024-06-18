@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }}'s 阵地</title>
+    <title>{{ name }} 的阵地</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 <body>
-    <h2>{{ name }}'s 阵地</h2>
+    <h2>
+        <img src="{{ url_for( 'static', filename='images/avatar.png') }}" alt="Avatar" class="avatar"> {{ name }}'s 阵地
+    </h2>
     <p>{{ movies|length }} Titles</p>
-    <ul>
+    <ul class="movie-list">
         {% for movie in movies %}
         <li>{{ movie.title }} - {{ movie.year }}</li>
         {% endfor %}
     </ul>
+    <img src="http://helloflask.com/totoro.gif" alt="walking totoro", class="totoro">
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
     </footer>
