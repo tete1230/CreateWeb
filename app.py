@@ -1,9 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,jsonify
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
 
+
+mongo = PyMongo(app)
+
 @app.route('/')
+def home_page():
+    try:
+        online_users = mongo.db.user.find({"online": True})
+        online_users_list = list(online_users)
+        return render_template("index.html", online_users=online_users_list, name=name, movies=movies)
+    except Exception as e:
+        return jsonify({'error': str(e)})
+
+@app.route('/home')
 def index():
     return render_template('index.html', name=name, movies=movies)
 
